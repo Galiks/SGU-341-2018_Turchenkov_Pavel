@@ -1,0 +1,6 @@
+E:\Documents\Visual Studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\bin\Debug\ADO.NET_Task_2_b.exe.config
+E:\Documents\Visual Studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\bin\Debug\ADO.NET_Task_2_b.exe
+E:\Documents\Visual Studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\bin\Debug\ADO.NET_Task_2_b.pdb
+E:\Documents\Visual Studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\obj\Debug\ADO.NET_Task_2_b.exe
+E:\Documents\Visual Studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\obj\Debug\ADO.NET_Task_2_b.pdb
+e:\documents\visual studio 2017\Projects\ADO.NET_Task_2_b\ADO.NET_Task_2_b\obj\Debug\ADO.NET_Task_2_b.csprojResolveAssemblyReference.cache
