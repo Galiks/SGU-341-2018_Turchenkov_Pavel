@@ -11,45 +11,49 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b
 {
-    static class Game
+    public class Game
     {
-        static Battlefield PlayerField { get; set; }
-        static Hero PlayerHero { get; set; }
-        static Monster MyMonster { get; set; }
-        static Bonus MyBonus { get; set; }
-        static Obstacle MyObstacle { get; set; }
+        private Battlefield PlayerField { get; set; }
+        private Hero PlayerHero { get; set; }
+        private Monster MyMonster { get; set; }
+        private Bonus MyBonus { get; set; }
+        private Obstacle MyObstacle { get; set; }
 
-        public static void StartGame()
+        public void StartGame()
         {
             SelectField();
 
+            SelectHero();
+
             PlacementObject();
+
+            Console.WriteLine("The creation of the game is over");
         }
 
-        static void SelectField()
+        private void SelectField()
         {
             Console.WriteLine($"Select the field{Environment.NewLine}1 - Small field (10x15){Environment.NewLine}2 - Medium field (30x35){Environment.NewLine}3 - Big field (50x55)");
             try
             {
-                int selectField = int.Parse(Console.ReadLine());
-                switch (selectField)
+                ConsoleKeyInfo entry = Console.ReadKey(intercept: true);
+                switch (entry.Key)
                 {
-                    case 1:
+                    case ConsoleKey.D1:
                         {
                             PlayerField = new Smallfield(10, 15, 2, 2, 3);
-                            SelectHero();
+                            
                             break;
                         }
-                    case 2:
+                    case ConsoleKey.D2:
                         {
                             PlayerField = new Mediumfield(30, 35, 5, 7, 6);
-                            SelectHero();
+                            
                             break;
                         }
-                    case 3:
+                    case ConsoleKey.D3:
                         {
                             PlayerField = new Bigfield(50, 55, 9, 15, 11);
-                            SelectHero();
+                            
                             break;
                         }
                     default:
@@ -67,25 +71,25 @@ namespace ADO.NET_Task_3_b
             }
         }
 
-        static void SelectHero()
+        private void SelectHero()
         {
             Console.WriteLine($"Select the hero{Environment.NewLine}1 - Hare{Environment.NewLine}2 - Snail{Environment.NewLine}3 - Snake");
             try
             {
-                int selectHero = int.Parse(Console.ReadLine());
-                switch (selectHero)
+                ConsoleKeyInfo entry = Console.ReadKey(intercept: true);
+                switch (entry.Key)
                 {
-                    case 1:
+                    case ConsoleKey.D1:
                         {
                             PlayerHero = new BattleHare(100, new Point { x = 1, y = 1 });
                             break;
                         }
-                    case 2:
+                    case ConsoleKey.D2:
                         {
                             PlayerHero = new BattleSnail(150, new Point { x = 1, y = 1 });
                             break;
                         }
-                    case 3:
+                    case ConsoleKey.D3:
                         {
                             PlayerHero = new BattleSnake(125, new Point { x = 1, y = 1 });
                             break;
@@ -105,7 +109,7 @@ namespace ADO.NET_Task_3_b
             }
         }
 
-        static void PlacementObject()
+        private void PlacementObject()
         {
             Random random = new Random();
 
@@ -166,7 +170,7 @@ namespace ADO.NET_Task_3_b
             #endregion
         }
 
-        static void Gameplay()
+        public void Gameplay()
         {
             if(PlayerHero.Power == 100)
             {

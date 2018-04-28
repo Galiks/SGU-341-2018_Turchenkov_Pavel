@@ -14,7 +14,9 @@ namespace ADO.NET_Task_3_b
     {
         static void Main(string[] args)
         {
-            Game.StartGame();
+            Game game = new Game();
+
+            game.StartGame();
 
             Console.ReadKey();
         }

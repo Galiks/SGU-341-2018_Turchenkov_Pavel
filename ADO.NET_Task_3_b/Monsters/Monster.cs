@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Monsters
 {
-    class Monster : Unit
+    public class Monster : Unit
     {
         public Monster(int health, Point position, int powerOfHit) : base(health, position)
         {

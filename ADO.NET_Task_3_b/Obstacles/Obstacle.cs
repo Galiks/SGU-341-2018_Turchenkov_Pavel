@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Obstacles
 {
-    class Obstacle: FixedObject
+    public class Obstacle: FixedObject
     {
         public Obstacle(Point position, int strength) : base(position)
         {

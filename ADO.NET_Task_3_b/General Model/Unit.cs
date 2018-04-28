@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b
 {
-    abstract class Unit
+    public abstract class Unit
     {
         public Unit(int health, Point position)
         {

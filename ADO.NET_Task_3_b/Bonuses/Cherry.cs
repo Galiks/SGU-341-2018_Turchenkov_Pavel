@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Bonuses
 {
-    class Cherry : Bonus
+    public class Cherry : Bonus
     {
         public Cherry(Point position, int power) : base(position, power)
         {

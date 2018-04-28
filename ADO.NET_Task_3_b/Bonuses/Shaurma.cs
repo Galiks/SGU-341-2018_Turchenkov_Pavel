@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Bonuses
 {
-    class Shaurma : Bonus
+    public class Shaurma : Bonus
     {
         public Shaurma(Point position, int power) : base(position, power)
         {

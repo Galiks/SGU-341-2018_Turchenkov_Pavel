@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Battlefields
 {
-    abstract class Battlefield
+    public abstract class Battlefield
     {
         public Battlefield(int width, int height, int numbersOfMonsters, int numberOfObstacles, int numberOfBonuses)
         {

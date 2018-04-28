@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET_Task_3_b.Player
 {
-    class BattleHare : Hero
+    public class BattleHare : Hero
     {
         public BattleHare(int health, Point position) : base(health, position)
         {
