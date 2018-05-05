@@ -172,7 +172,7 @@ namespace ADO.NET_Task_3_b
 
         public void Gameplay()
         {
-            if(PlayerHero.Power == 100)
+            if(PlayerHero.Power >= 100)
             {
                 Console.WriteLine("YOU WIN!");
             }
