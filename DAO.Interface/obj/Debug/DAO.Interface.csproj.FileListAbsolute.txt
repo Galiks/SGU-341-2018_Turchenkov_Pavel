@@ -1,0 +1,11 @@
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\DAO.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\DAO.Interface.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\Entity.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\Ninject.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\Entity.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\bin\Debug\Ninject.xml
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\obj\Debug\DAO.Interface.csprojAssemblyReference.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\obj\Debug\DAO.Interface.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\obj\Debug\DAO.Interface.csproj.CopyComplete
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\obj\Debug\DAO.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO.Interface\obj\Debug\DAO.Interface.pdb

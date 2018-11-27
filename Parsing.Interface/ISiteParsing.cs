@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using System.Collections;
 
 namespace Parsing
 {
@@ -7,6 +8,7 @@ namespace Parsing
         int? MaxPage { get; set; }
         HtmlWeb WebGet { get; set; }
 
-        void MainMethod();
+        void Parsing();
+        IEnumerable ShowData();
     }
 }

@@ -1,0 +1,8 @@
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Entity.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Entity.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Ninject.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Ninject.xml
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.csproj.CopyComplete
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.pdb

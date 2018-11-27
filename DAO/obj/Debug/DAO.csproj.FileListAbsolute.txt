@@ -1,0 +1,13 @@
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\DAO.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\DAO.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\DAO.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Entity.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Ninject.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\DAO.Interface.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Entity.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Ninject.xml
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.csproj.CopyComplete
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.pdb

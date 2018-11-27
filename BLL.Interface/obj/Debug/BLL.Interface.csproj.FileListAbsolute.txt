@@ -1,0 +1,8 @@
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\BLL.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\BLL.Interface.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Ninject.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Ninject.xml
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.csproj.CopyComplete
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.pdb

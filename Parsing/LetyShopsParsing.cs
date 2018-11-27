@@ -2,6 +2,7 @@
 using HtmlAgilityPack;
 using ScrapySharp.Extensions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Parsing
 {
-    public class SiteParsing : ISiteParsing
+    public class LetyShopsParsing : ISiteParsing
     {
         private static List<string> names = new List<string>();
         private static List<string> discount = new List<string>();
@@ -25,12 +26,12 @@ namespace Parsing
         public HtmlWeb WebGet { get => webGet; set => webGet = value; }
         public static List<LetyShops> LetyShops { get => letyShops; set => letyShops = value; }
 
-        public SiteParsing()
+        public LetyShopsParsing()
         {
             WebGet = new HtmlWeb();
         }
 
-        public void MainMethod()
+        public void Parsing()
         {
 
             MaxPage = MaxPageOnSite(webGet);
@@ -102,6 +103,16 @@ namespace Parsing
             }
 
             return null;
+        }
+
+        public IEnumerable ShowData()
+        {
+            List<string> vs = new List<string>();
+            for (int i = 0; i < Names.Count; i++)
+            {
+                vs.Add($"{Names[i]}: {Discount[i]}");
+            }
+            return vs;
         }
     }
 }

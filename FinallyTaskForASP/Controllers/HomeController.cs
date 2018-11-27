@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BLL;
+using Ninject;
+using NinjectCommon;
+using Parsing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +12,21 @@ namespace FinallyTaskForASP.Controllers
 {
     public class HomeController : Controller
     {
+        private static ILetyShopsLogic letyShopsLogic;
+        private static ISiteParsing siteParsing;
+
+        public HomeController()
+        {
+            NinjectClass.Registration();
+
+            letyShopsLogic = NinjectClass.Kernel.Get<ILetyShopsLogic>();
+            siteParsing = NinjectClass.Kernel.Get<ISiteParsing>();
+        }
+
         public ActionResult Index()
         {
-            List<string> list = new List<string>() { "qwe", "asd", "zxc" };
-            return View(list);
+            siteParsing.Parsing();
+            return View(siteParsing.ShowData());
         }
     }
 }
