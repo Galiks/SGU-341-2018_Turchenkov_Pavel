@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Text.RegularExpressions;
 
 namespace BLL
@@ -7,7 +8,7 @@ namespace BLL
     {
         Regex RegexDiscount { get; set; }
 
-        bool AddData(string name, string discount, DateTime timeAdd, int id);
+        bool AddData(LetyShops letyShops);
         bool AddShop(string name);
     }
 }

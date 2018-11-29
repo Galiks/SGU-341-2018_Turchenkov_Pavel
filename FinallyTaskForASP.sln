@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO.Interface", "DAO.Interf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsing.Interface", "Parsing.Interface\Parsing.Interface.csproj", "{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity.Abstract", "Entity.Abstract\Entity.Abstract.csproj", "{DDA20174-2F35-41D3-8D65-9390161F9E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA20174-2F35-41D3-8D65-9390161F9E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA20174-2F35-41D3-8D65-9390161F9E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA20174-2F35-41D3-8D65-9390161F9E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA20174-2F35-41D3-8D65-9390161F9E02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{52EB1F8A-E2AA-4589-B332-CED6B0F65C97} = {79CBED71-2971-4A4B-A38A-D1AC63124CA2}
 		{420F7AFC-C928-454A-8A50-5841B675FF28} = {A79A0B3C-5618-4BF9-A3CF-600E9E45A405}
 		{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E} = {79CBED71-2971-4A4B-A38A-D1AC63124CA2}
+		{DDA20174-2F35-41D3-8D65-9390161F9E02} = {11A819A6-1F08-4ACC-BA51-1953E49A2553}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF95CCBD-7EA9-4E73-8912-2546AD54A5AC}

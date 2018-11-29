@@ -17,6 +17,7 @@ namespace NinjectCommon
             _kernel.Bind<ILetyShopsLogic>().To<LetyShopsLogic>();
 
             _kernel.Bind<ISiteParsing>().To<LetyShopsParsing>();
+            //_kernel.Bind<ISiteParsing>().To<LetyShopsParsing>();
             
         }
     }

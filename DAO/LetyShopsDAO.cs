@@ -102,12 +102,10 @@ namespace DAO
                         yield return new LetyShops
                         {
                             Name = (string)reader["Description"],
-                            Discount = (double)reader["Discount_percent"],
-                            Date_add = (DateTime)reader["Data_add"],
-                            //IdUser = (int)reader["id_user"],
-                            //Name = (string)reader["Name"],
-                            //Birthday = (DateTime)reader["Birthday"],
-                            //Age = (int)reader["Age"],
+                            Discount = (string)reader["Discount_percent"],
+                            Url = "url",
+                            Image = "image",
+                            Date_add = (string)reader["Data_add"],
                         };
                     }
                 }

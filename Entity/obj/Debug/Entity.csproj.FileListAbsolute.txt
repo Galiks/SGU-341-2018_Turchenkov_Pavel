@@ -6,3 +6,6 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.csproj
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.csproj.CopyComplete
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Entity.Abstract.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity\bin\Debug\Entity.Abstract.pdb

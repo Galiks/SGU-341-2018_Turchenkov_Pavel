@@ -1,7 +1,21 @@
-﻿@model List<string>
+﻿@model List<Entity.LetyShops>
 @{
     ViewBag.Title = "Home Page";
 }
+
+<style>
+    table {
+        border: 4px double #333; /* Рамка вокруг таблицы */
+        border-collapse: separate; /* Способ отображения границы */
+        width: 100%; /* Ширина таблицы */
+        border-spacing: 7px 11px; /* Расстояние между ячейками */
+    }
+
+    td {
+        padding: 5px; /* Поля вокруг текста */
+        border: 1px solid #a52a2a; /* Граница вокруг ячеек */
+    }
+</style>
 
 <div>
     @foreach (var item in Model)
@@ -9,7 +23,19 @@
         <table>
             <tr>
                 <td>
-                    @item
+                    @item.Name
+                </td>
+                <td>
+                    @item.Discount
+                </td>
+                <td>
+                    @item.Image
+                </td>
+                <td>
+                    @item.Url
+                </td>
+                <td>
+                    @item.Date_add
                 </td>
             </tr>
         </table>

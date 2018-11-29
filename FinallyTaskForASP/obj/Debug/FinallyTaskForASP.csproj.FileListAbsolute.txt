@@ -233,3 +233,5 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\bin\tr\FShar
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\bin\zh-Hans\FSharp.Core.resources.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\bin\zh-Hant\FSharp.Core.resources.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\obj\Debug\FinallyTaskForASP.csproj.CopyComplete
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\bin\Entity.Abstract.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\FinallyTaskForASP\bin\Entity.Abstract.pdb

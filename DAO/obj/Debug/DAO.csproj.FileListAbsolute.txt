@@ -11,3 +11,5 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.csproj.CoreC
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.csproj.CopyComplete
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\obj\Debug\DAO.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Entity.Abstract.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\DAO\bin\Debug\Entity.Abstract.pdb

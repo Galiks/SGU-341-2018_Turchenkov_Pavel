@@ -42,3 +42,5 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\obj\Debug\Ninjec
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\obj\Debug\NinjectCommon.csproj.CopyComplete
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\obj\Debug\NinjectCommon.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\obj\Debug\NinjectCommon.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\bin\Debug\Entity.Abstract.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\NinjectCommon\bin\Debug\Entity.Abstract.pdb

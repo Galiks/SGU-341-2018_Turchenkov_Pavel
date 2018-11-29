@@ -26,20 +26,14 @@ namespace BLL
 
         public Regex RegexDiscount { get => regexDiscount; set => regexDiscount = value; }
 
-        public bool AddData(string name, string discount, DateTime timeAdd, int id)
+        public bool AddData(LetyShops letyShops)
         {
-            if (!String.IsNullOrEmpty(name) | !String.IsNullOrEmpty(discount))
+            if (!String.IsNullOrEmpty(letyShops.Name) || !String.IsNullOrEmpty(letyShops.Discount))
             {
-                Match match = RegexDiscount.Match(discount);
+                _letyShopsDAO.AddData(letyShops, 1);
 
-                if (Double.TryParse(match.Value, out double rightDiscount))
-                {
-                    _letyShopsDAO.AddData(new LetyShops(name, rightDiscount, timeAdd), 1);
-
-                    return true;
-                }
+                return true;
             }
-
             return false;
         }
 

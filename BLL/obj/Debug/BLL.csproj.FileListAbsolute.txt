@@ -13,3 +13,5 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\obj\Debug\BLL.csproj.CoreC
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\obj\Debug\BLL.csproj.CopyComplete
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\obj\Debug\BLL.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\obj\Debug\BLL.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\bin\Debug\Entity.Abstract.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL\bin\Debug\Entity.Abstract.pdb
