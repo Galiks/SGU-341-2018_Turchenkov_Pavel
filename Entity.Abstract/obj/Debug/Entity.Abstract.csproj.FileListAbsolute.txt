@@ -3,3 +3,9 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\bin\Debug\Enti
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\bin\Debug\Entity.Abstract.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\bin\Debug\Entity.Abstract.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.csprojAssemblyReference.cache
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.csproj.CoreCompileInputs.cache
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Entity.Abstract\obj\Debug\Entity.Abstract.pdb

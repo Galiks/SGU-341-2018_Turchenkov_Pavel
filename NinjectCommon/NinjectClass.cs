@@ -15,8 +15,7 @@ namespace NinjectCommon
         {
             _kernel.Bind<IParsingDAO>().To<ParsingDAO>();
             _kernel.Bind<IParsingLogic>().To<ParsingLogic>();
-
-            _kernel.Bind<ISiteParsing>().To<ParsingAllSite>();
+            _kernel.Bind<ISiteParsing>().To<SiteParsing>();
             
         }
     }

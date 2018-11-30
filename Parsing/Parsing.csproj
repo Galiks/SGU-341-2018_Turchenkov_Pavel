@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LetyShopsParsing.cs" />
-    <Compile Include="ParsingAllSite.cs" />
+    <Compile Include="SiteParsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +69,10 @@
     <ProjectReference Include="..\BLL.Interface\BLL.Interface.csproj">
       <Project>{52EB1F8A-E2AA-4589-B332-CED6B0F65C97}</Project>
       <Name>BLL.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity.Abstract\Entity.Abstract.csproj">
+      <Project>{DDA20174-2F35-41D3-8D65-9390161F9E02}</Project>
+      <Name>Entity.Abstract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{C00F6677-C0B2-4A6A-91D8-8B17C667D2F6}</Project>

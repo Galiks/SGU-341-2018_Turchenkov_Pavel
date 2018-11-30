@@ -229,7 +229,7 @@ namespace DAO
             }
         }
 
-        public IEnumerable<Site> GetSiteByID(int siteID)
+        public Site GetSiteByID(int siteID)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -251,7 +251,7 @@ namespace DAO
                 {
                     while (reader.Read())
                     {
-                        yield return new Site
+                        return new Site
                         {
                             IdSite = (int)reader["id"],
                             Name = (string)reader["Name"],
@@ -259,9 +259,11 @@ namespace DAO
                     }
                 }
             }
+
+            return null;
         }
 
-        public IEnumerable<Site> GetSiteByName(string siteName)
+        public Site GetSiteByName(string siteName)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -283,7 +285,7 @@ namespace DAO
                 {
                     while (reader.Read())
                     {
-                        yield return new Site
+                        return new Site
                         {
                             IdSite = (int)reader["id"],
                             Name = (string)reader["Name"],
@@ -291,6 +293,8 @@ namespace DAO
                     }
                 }
             }
+
+            return null;
         }
 
         public IEnumerable<Site> GetSites()

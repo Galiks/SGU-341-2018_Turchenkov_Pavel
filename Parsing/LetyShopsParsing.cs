@@ -18,14 +18,16 @@ namespace Parsing
     public class LetyShopsParsing : ISiteParsing
     {
         #region Fields
+        private readonly string address = "https://letyshops.com";
         private List<string> names;
         private List<string> discounts;
         private List<int> pages;
         private List<string> urls;
         private List<string> images;
+        private List<string> labels;
         private int? maxPage;
         HtmlWeb webGet;
-        private List<Shop> letyShops;
+        private IParsingLogic _parsingLogic;
         #endregion
 
         #region Properties
@@ -36,20 +38,20 @@ namespace Parsing
         public List<int> Pages { get => pages; set => pages = value; }
         public List<string> Urls { get => urls; set => urls = value; }
         public List<string> Images { get => images; set => images = value; }
-        public List<Shop> LetyShops { get => letyShops; set => letyShops = value; }
-        //public IParsingLogic LetyShopsLogic { get => letyShopsLogic; set => letyShopsLogic = value; }
+        public List<string> Labels { get => labels; set => labels = value; }
         #endregion
 
         #region Constructors
-        public LetyShopsParsing()
+        public LetyShopsParsing(IParsingLogic parsingLogic)
         {
+            _parsingLogic = parsingLogic;
             WebGet = new HtmlWeb();
             Names = new List<string>();
             Discounts = new List<string>();
             Pages = new List<int>();
             Urls = new List<string>();
             Images = new List<string>();
-            LetyShops = new List<Shop>();
+            Labels = new List<string>();
         }
         #endregion
 
@@ -63,10 +65,10 @@ namespace Parsing
 
             MaxPage = MaxPageOnSite(webGet);
 
-            for (int i = 1; i <= 1; i++)
+            for (int i = 1; i <= MaxPage; i++)
             {
 
-                var url = $"https://letyshops.com/shops?page=1";
+                var url = $"https://letyshops.com/shops?page={i}";
 
                 if (WebGet.Load(url) is HtmlDocument document)
                 {
@@ -83,24 +85,24 @@ namespace Parsing
                 }
             }
         }
-
-        /// <summary>
-        /// Метод, возвращающий список данных с сайта LetyShops
-        /// </summary>
-        /// <returns>Список LetyShops</returns>
-        public IEnumerable ShowData()
-        {
-            List<Shop> letyShops = new List<Shop>();
-            for (int i = 0; i < Names.Count; i++)
-            {
-                //letyShops.Add(new LetyShops(Names[i], Discounts[i], Urls[i], Images[i], DateTime.Now.ToString()));
-            }
-            return letyShops.ToList();
-        }
-
         #endregion
 
         #region Private methods
+        private void AddShopsToDB()
+        {
+            var site = _parsingLogic.GetSiteByName(address);
+
+            if (site == null)
+            {
+                _parsingLogic.AddSite(address);
+                site = _parsingLogic.GetSiteByName(address);
+            }
+
+            for (int i = 0; i < Names.Count; i++)
+            {
+                _parsingLogic.AddShop(Names[i], Discounts[i], Urls[i], Images[i], DateTime.Now.ToString(), site.IdSite.ToString());
+            }
+        }
         /// <summary>
         /// Метод, заполняющий список кэшбеков с сайта LetyShops
         /// </summary>
@@ -109,12 +111,7 @@ namespace Parsing
         {
             foreach (var node in nodes)
             {
-                // /html/body/div//*/div[@class='b-shop-teaser__cash-value-row']//span[@class='b-shop-teaser__cash']|//span[@class='b-shop-teaser__new-cash']
-                foreach (var cashValues in node.SelectNodes("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']"))
-                {
-                    //Console.WriteLine(cashValues.InnerText.CleanInnerText());
-                    Discounts.Add(cashValues.InnerText.CleanInnerText());
-                }
+                Discounts.Add(node.SelectSingleNode("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']").InnerText.CleanInnerText());
             }
         }
 
@@ -141,16 +138,7 @@ namespace Parsing
         {
             foreach (var item in nodes)
             {
-                foreach (var item2 in item.CssSelect("a.b-teaser__inner"))
-                {
-                   foreach(var item3 in item2.SelectNodes("/html/body//*/div[@class='b-teaser']/a/@href"))
-                    {
-                        foreach (var item4 in item3.Attributes)
-                        {
-                            Urls.Add(item4.Value);
-                        }
-                    }
-                }
+                Urls.Add(item.SelectSingleNode("/html/body//*/div[@class='b-teaser']/a/@href").Attributes["href"].Value);
             }
         }
 
@@ -162,16 +150,7 @@ namespace Parsing
         {
             foreach (var item in nodes)
             {
-                foreach (var item2 in item.CssSelect("div.b-teaser__cover"))
-                {
-                    foreach (var item3 in item2.SelectNodes("/html/body//*/div[@class='b-teaser']/a//*/div[@class='b-teaser__cover']/img/@src"))
-                    {
-                        foreach(var item4 in item3.Attributes)
-                        {
-                            Images.Add(item4.Value);
-                        }
-                    }
-                }
+                Images.Add(item.SelectSingleNode("/html/body//*/div[@class='b-teaser']/a//*/div[@class='b-teaser__cover']/img/@src").Attributes["src"].Value);
             }
         }
 
