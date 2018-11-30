@@ -13,11 +13,10 @@ namespace NinjectCommon
 
         public static void Registration()
         {
-            _kernel.Bind<ILetyShopsDAO>().To<LetyShopsDAO>();
-            _kernel.Bind<ILetyShopsLogic>().To<LetyShopsLogic>();
+            _kernel.Bind<IParsingDAO>().To<ParsingDAO>();
+            _kernel.Bind<IParsingLogic>().To<ParsingLogic>();
 
-            _kernel.Bind<ISiteParsing>().To<LetyShopsParsing>();
-            //_kernel.Bind<ISiteParsing>().To<LetyShopsParsing>();
+            _kernel.Bind<ISiteParsing>().To<ParsingAllSite>();
             
         }
     }

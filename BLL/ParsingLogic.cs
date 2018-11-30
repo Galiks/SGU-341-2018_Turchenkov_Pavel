@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class LetyShopsLogic : ILetyShopsLogic
+    public class ParsingLogic : IParsingLogic
     {
         private const string patternDiscount = @"\d+[.]?\d*";
 
-        private readonly ILetyShopsDAO _letyShopsDAO;
+        private readonly IParsingDAO _letyShopsDAO;
 
         private Regex regexDiscount;
 
-        public LetyShopsLogic(ILetyShopsDAO letyShopsDAO)
+        public ParsingLogic(IParsingDAO letyShopsDAO)
         {
             _letyShopsDAO = letyShopsDAO;
 
@@ -26,11 +26,11 @@ namespace BLL
 
         public Regex RegexDiscount { get => regexDiscount; set => regexDiscount = value; }
 
-        public bool AddData(LetyShops letyShops)
+        public bool AddData(AbstractSite site)
         {
-            if (!String.IsNullOrEmpty(letyShops.Name) || !String.IsNullOrEmpty(letyShops.Discount))
+            if (!String.IsNullOrEmpty(site.Name) || !String.IsNullOrEmpty(site.Discount))
             {
-                _letyShopsDAO.AddData(letyShops, 1);
+                _letyShopsDAO.AddData(site, 1);
 
                 return true;
             }

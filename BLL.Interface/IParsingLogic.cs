@@ -4,11 +4,11 @@ using System.Text.RegularExpressions;
 
 namespace BLL
 {
-    public interface ILetyShopsLogic
+    public interface IParsingLogic
     {
         Regex RegexDiscount { get; set; }
 
-        bool AddData(LetyShops letyShops);
+        bool AddData(AbstractSite site);
         bool AddShop(string name);
     }
 }

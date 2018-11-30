@@ -3,9 +3,9 @@ using Entity;
 
 namespace DAO
 {
-    public interface ILetyShopsDAO
+    public interface IParsingDAO
     {
-        int AddData(LetyShops letyShops, int id);
+        int AddData(AbstractSite letyShops, int id);
         int AddShop(Shop shop);
         IEnumerable<LetyShops> GetDiscounts();
     }

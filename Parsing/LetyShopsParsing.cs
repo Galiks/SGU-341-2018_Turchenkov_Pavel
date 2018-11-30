@@ -26,7 +26,6 @@ namespace Parsing
         private int? maxPage;
         HtmlWeb webGet;
         private List<LetyShops> letyShops;
-        private ILetyShopsLogic letyShopsLogic;
         #endregion
 
         #region Properties
@@ -38,6 +37,7 @@ namespace Parsing
         public List<string> Urls { get => urls; set => urls = value; }
         public List<string> Images { get => images; set => images = value; }
         public List<LetyShops> LetyShops { get => letyShops; set => letyShops = value; }
+        //public IParsingLogic LetyShopsLogic { get => letyShopsLogic; set => letyShopsLogic = value; }
         #endregion
 
         #region Constructors

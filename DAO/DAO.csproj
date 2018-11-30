@@ -45,13 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LetyShopsDAO.cs" />
+    <Compile Include="ParsingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO.Interface\DAO.Interface.csproj">
       <Project>{420f7afc-c928-454a-8a50-5841b675ff28}</Project>
       <Name>DAO.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity.Abstract\Entity.Abstract.csproj">
+      <Project>{dda20174-2f35-41d3-8d65-9390161f9e02}</Project>
+      <Name>Entity.Abstract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{C00F6677-C0B2-4A6A-91D8-8B17C667D2F6}</Project>
@@ -60,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

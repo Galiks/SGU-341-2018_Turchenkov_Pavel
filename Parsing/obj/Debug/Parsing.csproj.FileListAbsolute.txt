@@ -34,3 +34,5 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Ninject.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Ninject.xml
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.Abstract.dll
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.Abstract.pdb
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.Interface.dll
+E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.Interface.pdb
