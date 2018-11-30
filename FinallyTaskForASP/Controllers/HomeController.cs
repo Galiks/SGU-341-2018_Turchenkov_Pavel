@@ -27,7 +27,7 @@ namespace FinallyTaskForASP.Controllers
 
             foreach (var item in result)
             {
-                parsingLogic.AddData((LetyShops)item);
+                parsingLogic.AddData((Shop)item);
             }
 
             return View(siteParsing.ShowData());

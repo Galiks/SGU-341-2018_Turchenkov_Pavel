@@ -6,7 +6,7 @@ using System.Web;
 
 namespace FinallyTaskForASP.Models
 {
-    public class LetyShopsModel : LetyShops
+    public class LetyShopsModel : Shop
     {
         public override string Name { get => base.Name; set => base.Name = value; }
         public override string Discount { get => base.Discount; set => base.Discount = value; }

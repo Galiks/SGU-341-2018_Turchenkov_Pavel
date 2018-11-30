@@ -25,7 +25,7 @@ namespace Parsing
         private List<string> images;
         private int? maxPage;
         HtmlWeb webGet;
-        private List<LetyShops> letyShops;
+        private List<Shop> letyShops;
         #endregion
 
         #region Properties
@@ -36,7 +36,7 @@ namespace Parsing
         public List<int> Pages { get => pages; set => pages = value; }
         public List<string> Urls { get => urls; set => urls = value; }
         public List<string> Images { get => images; set => images = value; }
-        public List<LetyShops> LetyShops { get => letyShops; set => letyShops = value; }
+        public List<Shop> LetyShops { get => letyShops; set => letyShops = value; }
         //public IParsingLogic LetyShopsLogic { get => letyShopsLogic; set => letyShopsLogic = value; }
         #endregion
 
@@ -49,7 +49,7 @@ namespace Parsing
             Pages = new List<int>();
             Urls = new List<string>();
             Images = new List<string>();
-            LetyShops = new List<LetyShops>();
+            LetyShops = new List<Shop>();
         }
         #endregion
 
@@ -90,10 +90,10 @@ namespace Parsing
         /// <returns>Список LetyShops</returns>
         public IEnumerable ShowData()
         {
-            List<LetyShops> letyShops = new List<LetyShops>();
+            List<Shop> letyShops = new List<Shop>();
             for (int i = 0; i < Names.Count; i++)
             {
-                letyShops.Add(new LetyShops(Names[i], Discounts[i], Urls[i], Images[i], DateTime.Now.ToString()));
+                //letyShops.Add(new LetyShops(Names[i], Discounts[i], Urls[i], Images[i], DateTime.Now.ToString()));
             }
             return letyShops.ToList();
         }

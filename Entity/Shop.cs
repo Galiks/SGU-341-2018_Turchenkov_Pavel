@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Shop
+    public class Shop : AbstractShop
     {
-        public int IdShop { get; set; }
-        public string Name { get; set; }
-
-        public Shop(string name)
+        public Shop()
         {
-            Name = name;
         }
 
-        public Shop(int idShop, string name)
+        public Shop(string name, double discount, string url, string image, DateTime date_add, int idSite, string label) : base(name, discount, url, image, date_add, idSite, label)
         {
-            IdShop = idShop;
-            Name = name;
+        }
+
+        public Shop(int idShop, string name, double discount, string url, string image, DateTime date_add, int idSite, string label) : base(idShop, name, discount, url, image, date_add, idSite, label)
+        {
         }
     }
 }

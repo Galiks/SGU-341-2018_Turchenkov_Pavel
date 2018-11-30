@@ -19,7 +19,7 @@ namespace DAO
             _connectionString = ConfigurationManager.ConnectionStrings["parsing"].ConnectionString;
         }
 
-        public int AddData(AbstractSite site, int id)
+        public int AddShop(AbstractShop shop)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -30,32 +30,32 @@ namespace DAO
 
                 var name = new SqlParameter("@Name", SqlDbType.VarChar)
                 {
-                    Value = site.Name
+                    Value = shop.Name
                 };
 
-                var discount = new SqlParameter("@Discount", SqlDbType.VarChar)
+                var discount = new SqlParameter("@Discount", SqlDbType.Float)
                 {
-                    Value = site.Discount
+                    Value = shop.Discount
                 };
 
                 var url = new SqlParameter("@Url", SqlDbType.VarChar)
                 {
-                    Value = site.Url
+                    Value = shop.Url
                 };
 
                 var image = new SqlParameter("@Image", SqlDbType.VarChar)
                 {
-                    Value = site.Image
+                    Value = shop.Image
                 };
 
-                var dateAdd = new SqlParameter("@DateAdd", SqlDbType.VarChar)
+                var dateAdd = new SqlParameter("@DateAdd", SqlDbType.DateTime)
                 {
-                    Value = site.Date_add
+                    Value = shop.Date_add
                 };
 
                 var idSite = new SqlParameter("@SiteID", SqlDbType.Int)
                 {
-                    Value = id
+                    Value = shop.IdSite
                 };
 
                 command.Parameters.AddRange(new SqlParameter[] { name, discount, url, image, dateAdd, idSite });
@@ -66,7 +66,7 @@ namespace DAO
             }
         }
 
-        public int AddShop(Shop shop)
+        public int AddSite(Site site)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -77,7 +77,7 @@ namespace DAO
 
                 var name = new SqlParameter("@Name", SqlDbType.VarChar)
                 {
-                    Value = shop.Name
+                    Value = site.Name
                 };
 
                 command.Parameters.Add(name);
@@ -88,38 +88,261 @@ namespace DAO
             }
         }
 
-        public IEnumerable<LetyShops> GetDiscounts()
+        public IEnumerable<AbstractShop> GetShopByDiscount(double shopDiscount)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetShopByDiscount";
+
+                var discount = new SqlParameter("@Discount", SqlDbType.Float)
+                {
+                    Value = shopDiscount
+                };
+
+                command.Parameters.Add(discount);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Shop
+                        {
+                            IdSite = (int)reader["id_site"],
+                            Name = (string)reader["Name"],
+                            Discount = (double)reader["Discount"],
+                            Url = (string)reader["Url_on_site"],
+                            Image = (string)reader["Image"],
+                            Date_add = (DateTime)reader["Date_add"],
+                            IdShop = (int)reader["id"]
+                        };
+                    }
+                }
+            }
         }
 
-        //public IEnumerable<LetyShops> GetDiscounts()
-        //{
-        //    using (var connection = new SqlConnection(_connectionString))
-        //    {
-        //        var command = connection.CreateCommand();
+        public IEnumerable<AbstractShop> GetShopByName(string shopName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
 
-        //        command.CommandType = CommandType.StoredProcedure;
-        //        command.CommandText = "ShowAllDiscounts";
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetShopByName";
 
-        //        connection.Open();
+                var name = new SqlParameter("@Name", SqlDbType.VarChar)
+                {
+                    Value = shopName
+                };
 
-        //        using (var reader = command.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                yield return new LetyShops
-        //                {
-        //                    Name = (string)reader["Description"],
-        //                    Discount = (string)reader["Discount_percent"],
-        //                    Url = "url",
-        //                    Image = "image",
-        //                    Date_add = (string)reader["Data_add"],
-        //                };
-        //            }
-        //        }
+                command.Parameters.Add(name);
 
-        //    }
-        //}
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Shop
+                        {
+                            IdSite = (int)reader["id_site"],
+                            Name = (string)reader["Name"],
+                            Discount = (double)reader["Discount"],
+                            Url = (string)reader["Url_on_site"],
+                            Image = (string)reader["Image"],
+                            Date_add = (DateTime)reader["Date_add"],
+                            IdShop = (int)reader["id"]
+                        };
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<AbstractShop> GetShops()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetAllShop";
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Shop
+                        {
+                            IdSite = (int)reader["id_site"],
+                            Name = (string)reader["Name"],
+                            Discount = (double)reader["Discount"],
+                            Url = (string)reader["Url_on_site"],
+                            Image = (string)reader["Image"],
+                            Date_add = (DateTime)reader["Date_add"],
+                            IdShop = (int)reader["id"]
+                        };
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<AbstractShop> GetShopsBySite(int siteID)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetShopsBySiteID";
+
+                var id = new SqlParameter("@SiteID", SqlDbType.Int)
+                {
+                    Value = siteID
+                };
+
+                command.Parameters.Add(id);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Shop
+                        {
+                            IdSite = (int)reader["id_site"],
+                            Name = (string)reader["Name"],
+                            Discount = (double)reader["Discount"],
+                            Url = (string)reader["Url_on_site"],
+                            Image = (string)reader["Image"],
+                            Date_add = (DateTime)reader["Date_add"],
+                            IdShop = (int)reader["id"]
+                        };
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<Site> GetSiteByID(int siteID)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetSiteByID";
+
+                var id = new SqlParameter("@SiteID", SqlDbType.Int)
+                {
+                    Value = siteID
+                };
+
+                command.Parameters.Add(id);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Site
+                        {
+                            IdSite = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                        };
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<Site> GetSiteByName(string siteName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetSiteByName";
+
+                var name = new SqlParameter("@Name", SqlDbType.VarChar)
+                {
+                    Value = siteName
+                };
+
+                command.Parameters.Add(name);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Site
+                        {
+                            IdSite = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                        };
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<Site> GetSites()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetAllSite";
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Site
+                        {
+                            IdSite = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                        };
+                    }
+                }
+            }
+        }
+
+        public int UpdateSite(int siteID, string siteName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "UpdateSite";
+
+                var id = new SqlParameter("@SiteID", SqlDbType.Int)
+                {
+                    Value = siteID
+                };
+
+                var name = new SqlParameter("@Name", SqlDbType.VarChar)
+                {
+                    Value = siteName
+                };
+
+                command.Parameters.AddRange(new SqlParameter[] { id, name });
+
+                connection.Open();
+
+                return (int)(decimal)command.ExecuteNonQuery();
+            }
+        }
     }
 }
