@@ -154,7 +154,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LetyShopsModel.cs" />
+    <Compile Include="Models\ShopsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +235,10 @@
     <ProjectReference Include="..\Parsing.Interface\Parsing.Interface.csproj">
       <Project>{18BAF6D2-C368-4204-A0E2-2E2BBE1B3D8E}</Project>
       <Name>Parsing.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parsing\Parsing.csproj">
+      <Project>{58850def-4f2e-42ca-8dea-e808b4c398af}</Project>
+      <Name>Parsing</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

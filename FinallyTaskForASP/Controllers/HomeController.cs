@@ -14,13 +14,12 @@ namespace FinallyTaskForASP.Controllers
 {
     public class HomeController : Controller
     {
-        private static readonly ISiteParsing siteParsing = NinjectClass.Kernel.Get<ISiteParsing>();
+        AllSitesParsing sitesParsing = new AllSitesParsing();
         private static readonly IParsingLogic parsingLogic = NinjectClass.Kernel.Get<IParsingLogic>();
 
         public ActionResult Index()
         {
-            siteParsing.Parsing();
-
+            sitesParsing.Parsing();
             return View(parsingLogic.GetShops());
         }
     }

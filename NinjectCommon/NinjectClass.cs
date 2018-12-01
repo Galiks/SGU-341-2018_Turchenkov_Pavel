@@ -1,7 +1,6 @@
 ﻿using BLL;
 using DAO;
 using Ninject;
-using Parsing;
 
 namespace NinjectCommon
 {
@@ -15,7 +14,7 @@ namespace NinjectCommon
         {
             _kernel.Bind<IParsingDAO>().To<ParsingDAO>();
             _kernel.Bind<IParsingLogic>().To<ParsingLogic>();
-            _kernel.Bind<ISiteParsing>().To<SiteParsing>();
+           // _kernel.Bind<IAllSitesParsing>().To<AllSitesParsing>();
             
         }
     }

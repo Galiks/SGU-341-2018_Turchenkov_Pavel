@@ -1,4 +1,4 @@
-﻿@model List<Entity.AbstractShop>
+﻿@model List<Entity.Shop>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -23,16 +23,17 @@
         <table>
             <tr>
                 <td>
+                    <img src="@item.Image" />
+                </td>
+                <td>
                     @item.Name
                 </td>
                 <td>
-                    @item.Discount
+                    @(item.Discount + " " + item.Label)
                 </td>
+
                 <td>
-                    @item.Image
-                </td>
-                <td>
-                    @item.Url
+                    <a href="@item.Url">Ссылка на источник</a>
                 </td>
                 <td>
                     @item.Date_add

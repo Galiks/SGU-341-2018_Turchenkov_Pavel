@@ -183,6 +183,15 @@ create procedure UpdateSite
 	@Name varchar(100),
 	@SiteID int
 AS
+begin
 UPDATE [dbo].[Site]
    SET [Name] = @Name
  WHERE id = @SiteID
+end
+GO
+
+create procedure DeleteDataFromShop
+AS
+begin
+	DELETE FROM [dbo].[Shop]
+end

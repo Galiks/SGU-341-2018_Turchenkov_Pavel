@@ -135,7 +135,6 @@ E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Sys
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\System.Xml.XPath.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\System.Xml.XPath.XDocument.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.Interface.dll
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.Abstract.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\FSharp.Core.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\HtmlAgilityPack.dll
@@ -144,7 +143,6 @@ E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Par
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\ScrapySharp.Core.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\ScrapySharp.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.Interface.pdb
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.Abstract.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Entity.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\Parsing.Interface.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\FSharp.Core.xml
@@ -170,3 +168,11 @@ E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\obj\Debug\Par
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\obj\Debug\Parsing.csproj.CopyComplete
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\obj\Debug\Parsing.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\obj\Debug\Parsing.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\NinjectCommon.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\DAO.Interface.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\DAO.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.dll
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\NinjectCommon.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\DAO.Interface.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\DAO.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing\bin\Debug\BLL.pdb

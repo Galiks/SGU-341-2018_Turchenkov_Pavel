@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LetyShopsParsing.cs" />
-    <Compile Include="SiteParsing.cs" />
+    <Compile Include="AllSitesParsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,13 +70,13 @@
       <Project>{52EB1F8A-E2AA-4589-B332-CED6B0F65C97}</Project>
       <Name>BLL.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entity.Abstract\Entity.Abstract.csproj">
-      <Project>{DDA20174-2F35-41D3-8D65-9390161F9E02}</Project>
-      <Name>Entity.Abstract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{C00F6677-C0B2-4A6A-91D8-8B17C667D2F6}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjectCommon\NinjectCommon.csproj">
+      <Project>{3190290d-64df-4eed-9684-183ca36483c8}</Project>
+      <Name>NinjectCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\Parsing.Interface\Parsing.Interface.csproj">
       <Project>{18baf6d2-c368-4204-a0e2-2e2bbe1b3d8e}</Project>

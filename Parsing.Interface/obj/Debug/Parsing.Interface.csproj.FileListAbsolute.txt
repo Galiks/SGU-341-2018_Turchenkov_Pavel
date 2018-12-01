@@ -126,13 +126,11 @@ E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\System.Xml.XmlSerializer.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\System.Xml.XPath.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\System.Xml.XPath.XDocument.dll
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\Entity.Abstract.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\FSharp.Core.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\HtmlAgilityPack.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\Ninject.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\ScrapySharp.Core.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\ScrapySharp.dll
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\Entity.Abstract.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\FSharp.Core.xml
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\HtmlAgilityPack.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\HtmlAgilityPack.xml
@@ -151,8 +149,8 @@ E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\tr\FSharp.Core.resources.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\zh-Hans\FSharp.Core.resources.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\bin\Debug\zh-Hant\FSharp.Core.resources.dll
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.csprojAssemblyReference.cache
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.csproj.CoreCompileInputs.cache
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.csproj.CopyComplete
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.pdb
+E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\Parsing.Interface\obj\Debug\Parsing.Interface.csprojAssemblyReference.cache

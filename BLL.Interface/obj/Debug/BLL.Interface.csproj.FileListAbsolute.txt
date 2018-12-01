@@ -13,10 +13,8 @@ E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Entity
 E:\Documents\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.csprojAssemblyReference.cache
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\BLL.Interface.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\BLL.Interface.pdb
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Entity.Abstract.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Entity.dll
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Ninject.dll
-E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Entity.Abstract.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Entity.pdb
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\bin\Debug\Ninject.xml
 E:\Документы\GitHub\SGU-341-2018_Turchenkov_Pavel\BLL.Interface\obj\Debug\BLL.Interface.csprojAssemblyReference.cache

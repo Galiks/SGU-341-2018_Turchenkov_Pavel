@@ -19,7 +19,7 @@ namespace DAO
             _connectionString = ConfigurationManager.ConnectionStrings["parsing"].ConnectionString;
         }
 
-        public int AddShop(AbstractShop shop)
+        public int AddShop(Shop shop)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -58,7 +58,12 @@ namespace DAO
                     Value = shop.IdSite
                 };
 
-                command.Parameters.AddRange(new SqlParameter[] { name, discount, url, image, dateAdd, idSite });
+                var label = new SqlParameter("@Label", SqlDbType.VarChar)
+                {
+                    Value = shop.Label
+                };
+
+                command.Parameters.AddRange(new SqlParameter[] { name, discount, url, image, dateAdd, idSite, label });
 
                 connection.Open();
 
@@ -88,7 +93,22 @@ namespace DAO
             }
         }
 
-        public IEnumerable<AbstractShop> GetShopByDiscount(double shopDiscount)
+        public int DeleteDataFromShop()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "DeleteDataFromShop";
+
+                connection.Open();
+
+                return (int)(decimal)command.ExecuteNonQuery();
+            }
+        }
+
+        public IEnumerable<Shop> GetShopByDiscount(double shopDiscount)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -118,14 +138,15 @@ namespace DAO
                             Url = (string)reader["Url_on_site"],
                             Image = (string)reader["Image"],
                             Date_add = (DateTime)reader["Date_add"],
-                            IdShop = (int)reader["id"]
+                            IdShop = (int)reader["id"],
+                            Label = (string)reader["Label"]
                         };
                     }
                 }
             }
         }
 
-        public IEnumerable<AbstractShop> GetShopByName(string shopName)
+        public IEnumerable<Shop> GetShopByName(string shopName)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -155,14 +176,15 @@ namespace DAO
                             Url = (string)reader["Url_on_site"],
                             Image = (string)reader["Image"],
                             Date_add = (DateTime)reader["Date_add"],
-                            IdShop = (int)reader["id"]
+                            IdShop = (int)reader["id"],
+                            Label = (string)reader["Label"]
                         };
                     }
                 }
             }
         }
 
-        public IEnumerable<AbstractShop> GetShops()
+        public IEnumerable<Shop> GetShops()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -185,14 +207,15 @@ namespace DAO
                             Url = (string)reader["Url_on_site"],
                             Image = (string)reader["Image"],
                             Date_add = (DateTime)reader["Date_add"],
-                            IdShop = (int)reader["id"]
+                            IdShop = (int)reader["id"],
+                            Label = (string)reader["Label"]
                         };
                     }
                 }
             }
         }
 
-        public IEnumerable<AbstractShop> GetShopsBySite(int siteID)
+        public IEnumerable<Shop> GetShopsBySite(int siteID)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -222,7 +245,8 @@ namespace DAO
                             Url = (string)reader["Url_on_site"],
                             Image = (string)reader["Image"],
                             Date_add = (DateTime)reader["Date_add"],
-                            IdShop = (int)reader["id"]
+                            IdShop = (int)reader["id"],
+                            Label = (string)reader["Label"]
                         };
                     }
                 }

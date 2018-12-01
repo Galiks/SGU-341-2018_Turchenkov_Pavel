@@ -52,10 +52,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entity.Abstract\Entity.Abstract.csproj">
-      <Project>{dda20174-2f35-41d3-8d65-9390161f9e02}</Project>
-      <Name>Entity.Abstract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{C00F6677-C0B2-4A6A-91D8-8B17C667D2F6}</Project>
       <Name>Entity</Name>

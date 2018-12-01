@@ -65,10 +65,10 @@ namespace Parsing
 
             MaxPage = MaxPageOnSite(webGet);
 
-            for (int i = 1; i <= MaxPage; i++)
+            for (int i = 1; i <= 1; i++)
             {
 
-                var url = $"https://letyshops.com/shops?page={i}";
+                var url = $"https://letyshops.com/shops?page=1";
 
                 if (WebGet.Load(url) is HtmlDocument document)
                 {
@@ -84,12 +84,15 @@ namespace Parsing
 
                 }
             }
+
+            AddShopsToDB();
         }
         #endregion
 
         #region Private methods
         private void AddShopsToDB()
         {
+
             var site = _parsingLogic.GetSiteByName(address);
 
             if (site == null)
@@ -97,6 +100,8 @@ namespace Parsing
                 _parsingLogic.AddSite(address);
                 site = _parsingLogic.GetSiteByName(address);
             }
+
+            _parsingLogic.DeleteDataFromShop();
 
             for (int i = 0; i < Names.Count; i++)
             {
@@ -111,7 +116,10 @@ namespace Parsing
         {
             foreach (var node in nodes)
             {
-                Discounts.Add(node.SelectSingleNode("/html/body/div//*/div[@class='b-shop-teaser__cash-value-row']").InnerText.CleanInnerText());
+                foreach (var item in node.CssSelect("div.b-shop-teaser__cash-value-row"))
+                {
+                    Discounts.Add(item.InnerText.CleanInnerText());
+                }
             }
         }
 
@@ -138,7 +146,10 @@ namespace Parsing
         {
             foreach (var item in nodes)
             {
-                Urls.Add(item.SelectSingleNode("/html/body//*/div[@class='b-teaser']/a/@href").Attributes["href"].Value);
+                foreach (var item2 in item.CssSelect("a.b-teaser__inner"))
+                {
+                    Urls.Add(address + item2.Attributes["href"].Value);
+                }
             }
         }
 
@@ -150,7 +161,10 @@ namespace Parsing
         {
             foreach (var item in nodes)
             {
-                Images.Add(item.SelectSingleNode("/html/body//*/div[@class='b-teaser']/a//*/div[@class='b-teaser__cover']/img/@src").Attributes["src"].Value);
+                foreach (var item2 in item.CssSelect("div.b-teaser__cover").CssSelect("img"))
+                {
+                    Images.Add(item2.Attributes["src"].Value);
+                }
             }
         }
 

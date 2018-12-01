@@ -27,16 +27,19 @@ namespace BLL
 
         public bool AddShop(string shopName, string shopDiscount, string shopUrl, string shopImage, string dateAdd, string siteID)
         {
+
+            //DeleteDataFromShop();
+
             if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { shopName, shopDiscount, shopImage, shopUrl, siteID, dateAdd }))
             {
 
                 //а ведь мог в одну строчку пихнуть, чтобы люди на дипломе мучались
-                Match matchDiscount = regexDiscount.Match(shopDiscount);
+                MatchCollection matchCollection = regexDiscount.Matches(shopDiscount);
                 Match matchLabel = regexLabel.Match(shopDiscount);
 
-                if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { matchDiscount.Value, matchLabel.Value }))
+                if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { matchCollection[matchCollection.Count-1].Value, matchLabel.Value }))
                 {
-                    if (Double.TryParse(matchDiscount.Value, out double rightDiscount) && DateTime.TryParse(dateAdd, out DateTime rightDateAdd) && Int32.TryParse(siteID, out int rightSiteID))
+                    if (Double.TryParse(matchCollection[matchCollection.Count - 1].Value, out double rightDiscount) && DateTime.TryParse(dateAdd, out DateTime rightDateAdd) && Int32.TryParse(siteID, out int rightSiteID))
                     {
                         _parsingDAO.AddShop(new Shop(shopName, rightDiscount, shopUrl, shopImage, rightDateAdd, rightSiteID, matchLabel.Value));
 
@@ -63,7 +66,14 @@ namespace BLL
             return false;
         }
 
-        public IEnumerable<AbstractShop> GetShopByDiscount(string shopDiscount)
+        public bool DeleteDataFromShop()
+        {
+            _parsingDAO.DeleteDataFromShop();
+
+            return true;
+        }
+
+        public IEnumerable<Shop> GetShopByDiscount(string shopDiscount)
         {
             if (CheckStringOnNullOrEmptyOrWhiteSpace(shopDiscount))
             {
@@ -76,7 +86,7 @@ namespace BLL
             return null;
         }
 
-        public IEnumerable<AbstractShop> GetShopByName(string shopName)
+        public IEnumerable<Shop> GetShopByName(string shopName)
         {
             if (CheckStringOnNullOrEmptyOrWhiteSpace(shopName))
             {
@@ -86,12 +96,12 @@ namespace BLL
             return null;
         }
 
-        public IEnumerable<AbstractShop> GetShops()
+        public IEnumerable<Shop> GetShops()
         {
-            return _parsingDAO.GetShops();
+            return _parsingDAO.GetShops().ToList();
         }
 
-        public IEnumerable<AbstractShop> GetShopsBySite(string siteID)
+        public IEnumerable<Shop> GetShopsBySite(string siteID)
         {
             if (CheckStringOnNullOrEmptyOrWhiteSpace(siteID))
             {

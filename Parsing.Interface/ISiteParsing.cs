@@ -1,9 +1,4 @@
-﻿using Entity;
-using HtmlAgilityPack;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace Parsing
+﻿namespace Parsing
 {
     public interface ISiteParsing
     {
