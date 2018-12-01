@@ -3,42 +3,19 @@
     ViewBag.Title = "Home Page";
 }
 
-<style>
-    table {
-        border: 4px double #333; /* Рамка вокруг таблицы */
-        border-collapse: separate; /* Способ отображения границы */
-        width: 100%; /* Ширина таблицы */
-        border-spacing: 7px 11px; /* Расстояние между ячейками */
-    }
-
-    td {
-        padding: 5px; /* Поля вокруг текста */
-        border: 1px solid #a52a2a; /* Граница вокруг ячеек */
-    }
-</style>
-
-<div>
-    @foreach (var item in Model)
-    {
-        <table>
-            <tr>
-                <td>
-                    <img src="@item.Image" />
-                </td>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @(item.Discount + " " + item.Label)
-                </td>
-
-                <td>
-                    <a href="@item.Url">Ссылка на источник</a>
-                </td>
-                <td>
-                    @item.Date_add
-                </td>
-            </tr>
-        </table>
-    }
-</div>
+<html>
+<head>
+    <meta name="viewport" content="width=divice-width" />
+    <title>Main Page</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <button name="action" value="Parsing">Просмотр кэш-бэков</button>
+            <button name="action" value="SignIn">Войти</button>
+            <button name="action" value="Registration">Зарегистрироваться</button>
+        }
+    </div>
+</body>
+</html>

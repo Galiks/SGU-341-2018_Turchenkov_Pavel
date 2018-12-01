@@ -16,5 +16,9 @@ namespace DAO
         IEnumerable<Shop> GetShopByName(string shopName);
         int UpdateSite(int siteID, string siteName);
         int DeleteDataFromShop();
+        void AddPerson(Person person);
+        IEnumerable<Person> GetPeople();
+        Person GetPersonByID(int personId);
+        Person GetPersonByName(string personName);
     }
 }

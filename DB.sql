@@ -31,6 +31,25 @@ CREATE TABLE Shop(
 )
 GO
 
+Create table Account(
+	id int identity(1,1) constraint[PK_ACCOUNT] primary key,
+	[Name] varchar(300) NOT NULL UNIQUE,
+	[Password] varchar(500) NOT NULL,
+	[Access] int,
+)
+GO
+
+INSERT INTO dbo.Account
+	([Name],
+	[Password],
+	[Access])
+Values
+	('admin',
+	'admin',
+	1)
+GO
+
+
 ALTER TABLE Shop add constraint[FK_Shop_Site]
 Foreign key (id_site) references [Site](id)
 on delete cascade
@@ -194,4 +213,55 @@ create procedure DeleteDataFromShop
 AS
 begin
 	DELETE FROM [dbo].[Shop]
+end
+go
+
+create procedure Registration
+	@Name varchar(300),
+	@Password varchar(500),
+	@Access int = 0
+AS
+begin
+	INSERT INTO dbo.Account
+	([Name],
+	[Password],
+	[Access])
+	Values
+	(@Name,
+	@Password,
+	@Access)
+End
+go
+
+create procedure GetUsers
+AS
+begin
+	select id,
+	[Name],
+	[Password]
+	from Account
+end
+go
+
+create procedure GetUserByID
+	@UserID int
+as
+begin
+	Select id,
+	[Name],
+	[Password]
+	FROM Account
+	Where id = @UserID
+end
+go
+
+Create procedure GetUserByName
+	@Name varchar(300)
+as
+begin
+	Select id,
+	[Name],
+	[Password]
+	From Account
+	where [Name] = @Name
 end

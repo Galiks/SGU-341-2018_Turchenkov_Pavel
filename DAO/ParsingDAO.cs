@@ -19,6 +19,33 @@ namespace DAO
             _connectionString = ConfigurationManager.ConnectionStrings["parsing"].ConnectionString;
         }
 
+        public void AddPerson(Person person)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.CommandText = "Registration";
+
+                var name = new SqlParameter("@Name", SqlDbType.VarChar)
+                {
+                    Value = person.Name
+                };
+
+                var password = new SqlParameter("@Password", SqlDbType.VarChar)
+                {
+                    Value = person.Password
+                };
+
+                command.Parameters.AddRange(new SqlParameter[] { name, password});
+
+                connection.Open();
+
+                //return (int)(decimal)command.ExecuteScalar();
+            }
+        }
+
         public int AddShop(Shop shop)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -106,6 +133,102 @@ namespace DAO
 
                 return (int)(decimal)command.ExecuteNonQuery();
             }
+        }
+
+        public IEnumerable<Person> GetPeople()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetUsers";
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Person
+                        {
+                            PersonID = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                            Password = (string)reader["Password"]
+                        };
+                    }
+                }
+            }
+        }
+
+        public Person GetPersonByID(int personId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetUserByID";
+
+                var id = new SqlParameter("@UserID", SqlDbType.Int)
+                {
+                    Value = personId
+                };
+
+                command.Parameters.Add(id);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return new Person
+                        {
+                            PersonID = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                            Password = (string)reader["Password"]
+                        };
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public Person GetPersonByName(string personName)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var command = connection.CreateCommand();
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetUserByName";
+
+                var name = new SqlParameter("@Name", SqlDbType.VarChar)
+                {
+                    Value = personName
+                };
+
+                command.Parameters.Add(name);
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        return new Person
+                        {
+                            PersonID = (int)reader["id"],
+                            Name = (string)reader["Name"],
+                            Password = (string)reader["Password"]
+                        };
+                    }
+                }
+            }
+
+            return null;
         }
 
         public IEnumerable<Shop> GetShopByDiscount(double shopDiscount)

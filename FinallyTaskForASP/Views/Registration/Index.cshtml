@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+</head>
+<body>
+    <p>REGISTRATION</p>
+    <div>
+        @using (Html.BeginForm("SignOn", "Registration"))
+        {
+            <table>
+                <tr>
+                    <td><p>Введите свое имя </p></td>
+                    <td><input type="text" name="login" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите пароль </p></td>
+                    <td><input type="password" name="password" /> </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Отправить" /> </td>
+                    <td></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

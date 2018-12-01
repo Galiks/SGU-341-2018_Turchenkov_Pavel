@@ -17,10 +17,22 @@ namespace FinallyTaskForASP.Controllers
         AllSitesParsing sitesParsing = new AllSitesParsing();
         private static readonly IParsingLogic parsingLogic = NinjectClass.Kernel.Get<IParsingLogic>();
 
-        public ActionResult Index()
+        public ActionResult Index(string action)
         {
-            sitesParsing.Parsing();
-            return View(parsingLogic.GetShops());
+            if (action == "Parsing")
+            {
+                return Redirect("Shops/Index");
+            }
+            if (action == "SignIn")
+            {
+                return Redirect("SignIn/Index");
+            }
+            if (action == "Registration")
+            {
+                return Redirect("Registration/Index");
+            }
+
+            return View();
         }
     }
 }

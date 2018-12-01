@@ -25,6 +25,21 @@ namespace BLL
             regexLabel = new Regex(patternLabel);
         }
 
+        public bool AddPerson(string name, string password)
+        {
+            if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { name, password }))
+            {
+                if (GetPersonByName(name) == null)
+                {
+                    _parsingDAO.AddPerson(new Person(name, password));
+
+                    return true; 
+                }
+            }
+
+            return false;
+        }
+
         public bool AddShop(string shopName, string shopDiscount, string shopUrl, string shopImage, string dateAdd, string siteID)
         {
 
@@ -37,7 +52,7 @@ namespace BLL
                 MatchCollection matchCollection = regexDiscount.Matches(shopDiscount);
                 Match matchLabel = regexLabel.Match(shopDiscount);
 
-                if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { matchCollection[matchCollection.Count-1].Value, matchLabel.Value }))
+                if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { matchCollection[matchCollection.Count - 1].Value, matchLabel.Value }))
                 {
                     if (Double.TryParse(matchCollection[matchCollection.Count - 1].Value, out double rightDiscount) && DateTime.TryParse(dateAdd, out DateTime rightDateAdd) && Int32.TryParse(siteID, out int rightSiteID))
                     {
@@ -71,6 +86,34 @@ namespace BLL
             _parsingDAO.DeleteDataFromShop();
 
             return true;
+        }
+
+        public IEnumerable<Person> GetPeople()
+        {
+            return _parsingDAO.GetPeople();
+        }
+
+        public Person GetPersonByID(string personId)
+        {
+            if (CheckStringOnNullOrEmptyOrWhiteSpace(personId))
+            {
+                if (Int32.TryParse(personId, out int rightID))
+                {
+                    return _parsingDAO.GetPersonByID(rightID);
+                }
+            }
+
+            return null;
+        }
+
+        public Person GetPersonByName(string personName)
+        {
+            if (CheckStringOnNullOrEmptyOrWhiteSpace(personName))
+            {
+                return _parsingDAO.GetPersonByName(personName);
+            }
+
+            return null;
         }
 
         public IEnumerable<Shop> GetShopByDiscount(string shopDiscount)
@@ -144,7 +187,7 @@ namespace BLL
 
         public bool UpdateSite(string siteID, string siteName)
         {
-            if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { siteID, siteName}))
+            if (CheckStringOnNullOrEmptyOrWhiteSpace(new List<string>() { siteID, siteName }))
             {
                 if (Int32.TryParse(siteID, out int rightSiteID))
                 {
@@ -152,7 +195,7 @@ namespace BLL
                     {
                         _parsingDAO.UpdateSite(rightSiteID, siteName);
 
-                        return true; 
+                        return true;
                     }
                 }
             }

@@ -18,5 +18,9 @@ namespace BLL
         IEnumerable<Shop> GetShopByName(string shopName);
         bool UpdateSite(string siteID, string siteName);
         bool DeleteDataFromShop();
+        bool AddPerson(string name, string password);
+        IEnumerable<Person> GetPeople();
+        Person GetPersonByID(string personId);
+        Person GetPersonByName(string personName);
     }
 }
