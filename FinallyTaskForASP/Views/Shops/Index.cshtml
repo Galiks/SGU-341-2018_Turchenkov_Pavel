@@ -12,6 +12,23 @@
     <title>Shops List</title>
 </head>
 <body>
+    <div>
+        @using (Html.BeginForm("OrderByDiscount", "Shops"))
+        {
+            <table>
+                <tr>
+                    <td><p>Введите дисконт </p></td>
+                    <td><input type="text" name="discount" /> </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Отправить" /> </td>
+                    <td></td>
+                </tr>
+            </table>
+        }
+    </div>
+
+
     <style>
         table {
             border: 4px double #333; /* Рамка вокруг таблицы */

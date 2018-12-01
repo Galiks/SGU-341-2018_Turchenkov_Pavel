@@ -16,5 +16,10 @@ namespace FinallyTaskForASP.Controllers
             sitesParsing.Parsing();
             return View(parsingLogic.GetShops());
         }
+
+        public ActionResult OrderByDiscount(string discount)
+        {
+            return View("Index", parsingLogic.GetShopByDiscount(discount));
+        }
     }
 }
